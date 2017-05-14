@@ -1,0 +1,105 @@
+---
+layout: frame
+---
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+            mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <a href="{{ site.baseurl }}" style="color: white">
+        <button class="mdl-button mdl-js-button mdl-button--icon">
+          <i class="material-icons">arrow_back</i>
+        </button>
+      </a>
+      <span class="mdl-layout-title">{{ page.category }}</span>
+      <div class="mdl-layout-spacer"></div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+        <label class="mdl-button mdl-js-button mdl-button--icon"
+               for="fixed-header-drawer-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="sample"
+                 id="fixed-header-drawer-exp">
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">목차</span>
+    <nav class="mdl-navigation">
+      {% assign grouped = site.tutorials | group_by: 'category' %}
+					{% for group in grouped %}
+            {% if group.name == page.category %}
+              {% assign items = group.items | sort: 'order' %}
+              {% for item in items %}
+                {% if item.order == page.order %}
+                <a class="mdl-navigation__link"><b>{{ item.title }}</b></a>
+                {% else %}
+                <a class="mdl-navigation__link" href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
+                {% endif %}
+
+              {% endfor %}
+            {% endif %}
+					{% endfor %}
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="content">
+      <!-- Your content goes here -->
+      <div class="mdl-card mdl-shadow--2dp tutorial-card">
+        <div>
+          <h3>{{page.title}}</h3>
+          {% if page.order == 0 %}
+          <b>튜토리얼 소개</b>
+          <p>{{ page.tutorial_desc }}</p>
+          <b>튜토리얼 저자 목록</b>
+          <ul>
+            {% for author in page.tutorial_authors %}
+              <li>{{ author }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+
+        <hr />
+        <div>
+          {{ page.content }}
+        </div>
+        <hr />
+        <div class="mdl-card__actions">
+          {% assign grouped = site.tutorials | group_by: 'category' %}
+    					{% for group in grouped %}
+                {% if group.name == page.category %}
+                  {% assign items = group.items | sort: 'order' %}
+                  {% assign previndex = page.order | minus: 1 %}
+                  {% if items[previndex].url and page.order > 0 %}
+                  <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                    href="{{ site.baseurl }}{{ items[previndex].url }}">
+                    <i class="material-icons">keyboard_arrow_left</i>
+                    이전
+                  </a>
+                  {% endif %}
+                  {% assign nextindex = page.order | plus: 1 %}
+                  {% if items[nextindex].url %}
+                  <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                    href="{{ site.baseurl }}{{ items[nextindex].url }}">
+                    다음
+                    <i class="material-icons">keyboard_arrow_right</i>
+                  </a>
+                  {% else %}
+                  <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                    href="{{ site.baseurl }}">
+                    <i class="material-icons">check</i>
+                    마침
+                  </a>
+                  {% endif %}
+                {% endif %}
+    					{% endfor %}
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
