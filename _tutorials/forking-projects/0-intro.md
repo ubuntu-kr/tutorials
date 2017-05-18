@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 category: Forking Projects
-tutorial_desc: GitHub 에서 다른 프로젝를 Fork 하는 방법을 알아봅시다.
+tutorial_desc: GitHub 에서 다른 프로젝트를 Fork 하는 방법을 알아봅시다.
 tutorial_authors:
   - 한영빈(sukso96100@gmail.com)
 title: 0. 개요
