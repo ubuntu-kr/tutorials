@@ -11,7 +11,7 @@ order: 4
 그러려면, 여러분들의 프로젝트가 있는 GitHub.com 의 저장소로 이동하세요. 예를 들어 아래와 같은 곳에서 찾을 수 있습니다.   
 `https://www.github.com/<your_username>/Spoon-Knife`   
 최근에 새 가지를 푸시 했고, 그래서 이 가지 "업스트립" 을 원래 저장소에 제출할 수 있음을 보여주는 배너를 볼 수 있습니다.
-![recent-pushed](recent_pushed_branch.png)   
+![recent-pushed](recently_pushed_branch.png)   
 **Compare and Pull Request** 을 누르면, 여러분을 제목과 선택적으로 설명을 입력 가능한 토론 페이지(discussion page) 로 보내 줍니다.
 처음에 많은 유용한 정보와, 왜 이 Pull Request 를 만드는 지에 대한 이유를 제공하는 것이 중요합니다.
 여러분이 생각하는 것 처럼 프로젝트 소유자가 이 변경사항이 모두에게 유용한지 결정해야 하기 때문입니다.
