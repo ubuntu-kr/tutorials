@@ -33,3 +33,7 @@ collections:
     title: Tutorials
     output: true
     permalink: "/:path"
+
+editor:
+  gh-repo: skhu-sw/tutorials
+  branch: gh-pages
