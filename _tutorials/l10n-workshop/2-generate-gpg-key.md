@@ -1,0 +1,118 @@
+---
+layout: tutorial
+category: 우분투 한국커뮤니티 번역 워크샵
+title: 2. GPG 만들기
+order: 2
+---
+
+**반드시 GUI, CLI 둘중 하나의 과정만 따라하셔야 합니다!**
+
+## GUI
+
+### 1) GPG키를 만들어 봅시다.
+
+1) 프로그램 → 보조프로그램 → 암호 및 키를 클릭하거나, 터미널로 $seahorse& 프로그램 실행합니다.
+
+2) 새로 만들기- PGP 키 매뉴를 선택합니다.
+
+![alt tag](img/%5BG%5D%EC%83%88%EB%A1%9C%EB%A7%8C%EB%93%A4%EA%B8%B0.png)
+
+3) 전체 이름, 이메일을 입력합니다.
+
+![alt tag](img/%5BG%5Dpgp%EC%A0%95%EB%B3%B4%EC%9E%85%EB%A0%A5.png)
+
+4) 잠시 기다립니다.
+
+![alt tag](img/%5BG%5Dgui%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8.png)
+
+### 2) 우분투 서버에 키를 동기화 해봅시다.
+
+1) 원격매뉴에서 키 동기화 및 공개 매뉴를 선택합니다.
+
+2) 키 서버를 누릅니다.
+
+![alt tag](img/%5BG%5D%ED%82%A4%EB%8F%99%EA%B8%B0%ED%99%94%EB%B0%8F%EA%B3%B5%EA%B0%9C.png)
+
+3) 키를 공개할 곳에서 hkp://keyserver.ubuntu.com:11371를 입력하거나 선택합니다.
+
+![alt tag](img/%5BG%5D%ED%82%A4%EC%84%9C%EB%B2%84.png)
+
+4) 동기화하고 기다립니다.
+
+### 3) 개인키를 백업해봅시다.
+
+1) 숨김파일을 보이게 설정합니다.
+
+2) Home 폴더에서 .gnupg 폴더를 찾습니다.
+
+3) 해당 폴더를 백업합니다.
+
+4) 혹은 암호 및 암호화 키 프로그램에서 전체 키 내보내기로 asc파일으로 백업합니다.
+
+### 4) 핑거프린트를 확인해봅시다.
+
+1) 암호 및 키 프로그램에서 본인의 키를 우측 클릭하여 속성에 들어갑니다.
+
+![alt tag](img/%5BG%5D%ED%82%A4%EC%86%8D%EC%84%B1.png)
+
+2) 자세한 정보 탭에 들어갑니다.
+
+3) 핑거프린트를 확인합니다.
+
+![alt tag](img/%5BG%5D%ED%95%91%EA%B1%B0%ED%94%84%EB%A6%B0%ED%8A%B8.png)
+
+## CLI
+
+### 1) GPG키를 만들어 봅시다.
+
+1) gpg --gen-key 를 터미널에 입력합니다.
+
+![alt tag](img/pgp-genkey.png)
+
+2) 기본값을 선택하기위해 enter를 누릅니다.
+
+3) 최종확인 질문이 나오면 y를 입력합니다. (틀리면 n)
+
+![alt tag](img/y%EC%9E%85%EB%A0%A5%ED%99%95%EC%9D%B8.png)
+
+4) gpg키의 이름,메일주소를 작성합니다.
+
+![alt tag](img/%EC%9D%B4%EB%A6%84%EA%B3%BC%EC%9D%B4%EB%A9%94%EC%9D%BC%EC%9E%85%EB%A0%A5.png)
+
+5)입력한 정보가 맞다면 o를 눌러 확인합니다
+
+![alt tag](img/o%EB%A5%BC%EB%88%8C%EB%9F%AC%EC%84%9C%ED%99%95%EC%9D%B8.png)
+
+6)비밀번호를 만들어 줍니다.
+
+![alt tag](img/%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8%EC%9E%85%EB%A0%A5.png)
+
+7) 랜덤 바이트를 모아줍니다.
+
+![alt tag](img/%EB%9E%9C%EB%8D%A4%ED%99%94.png)
+
+8) gpg2 --list-key 명령어로 자신의 키 id를 확인합니다.
+
+### 2) 우분투 서버에 키를 동기화 해봅시다.
+
+1) gpg --send-keys --keyserver keyserver.ubuntu.com {키ID} 를 터미널에 입력합니다.
+
+![alt tag](img/%ED%82%A4%EC%84%9C%EB%B2%84.png)
+
+4) 동기화하고 기다립니다.
+
+### 3) 개인키를 백업해봅시다.
+
+1) 숨김파일을 보이게 설정합니다.
+
+2) Home 폴더에서 .gnupg 폴더를 찾습니다.
+
+3) 해당 폴더를 백업합니다.
+
+(혹은 암호 및 암호화 키 프로그램에서 전체 키 내보내기로 asc파일으로 백업합니다.)
+
+### 4) 핑거프린트를 확인해봅시다.
+
+1) gpg --fingerprint를 터미널에 입력하여 현재 가지고 있는 키의 핑거프린트를 확인합니다.
+
+![alt tag](img/%ED%95%91%EA%B1%B0%ED%94%84%EB%A6%B0%ED%8A%B8.png)
