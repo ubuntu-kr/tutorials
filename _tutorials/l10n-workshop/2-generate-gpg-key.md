@@ -11,7 +11,7 @@ order: 2
 
 ### 1) GPG키를 만들어 봅시다.
 
-1) 프로그램 → 보조프로그램 → 암호 및 키를 클릭하거나, 터미널로 $seahorse& 프로그램 실행합니다.
+1) 프로그램 → 보조프로그램 → 암호 및 키를 클릭하거나, 터미널로 `$seahorse&` 프로그램 실행합니다.
 
 2) 새로 만들기- PGP 키 매뉴를 선택합니다.
 
@@ -43,7 +43,7 @@ order: 2
 
 1) 숨김파일을 보이게 설정합니다.
 
-2) Home 폴더에서 .gnupg 폴더를 찾습니다.
+2) Home 폴더에서 `.gnupg` 폴더를 찾습니다.
 
 3) 해당 폴더를 백업합니다.
 
@@ -65,7 +65,7 @@ order: 2
 
 ### 1) GPG키를 만들어 봅시다.
 
-1) gpg --gen-key 를 터미널에 입력합니다.
+1) `gpg --gen-key` 를 터미널에 입력합니다.
 
 ![alt tag](img/pgp-genkey.png)
 
@@ -91,11 +91,11 @@ order: 2
 
 ![alt tag](img/%EB%9E%9C%EB%8D%A4%ED%99%94.png)
 
-8) gpg2 --list-key 명령어로 자신의 키 id를 확인합니다.
+8) `gpg2 --list-key` 명령어로 자신의 키 id를 확인합니다.
 
 ### 2) 우분투 서버에 키를 동기화 해봅시다.
 
-1) gpg --send-keys --keyserver keyserver.ubuntu.com {키ID} 를 터미널에 입력합니다.
+1) `gpg --send-keys --keyserver keyserver.ubuntu.com {키ID}` 를 터미널에 입력합니다.
 
 ![alt tag](img/%ED%82%A4%EC%84%9C%EB%B2%84.png)
 
@@ -113,6 +113,6 @@ order: 2
 
 ### 4) 핑거프린트를 확인해봅시다.
 
-1) gpg --fingerprint를 터미널에 입력하여 현재 가지고 있는 키의 핑거프린트를 확인합니다.
+1) `gpg --fingerprint` 를 터미널에 입력하여 현재 가지고 있는 키의 핑거프린트를 확인합니다.
 
 ![alt tag](img/%ED%95%91%EA%B1%B0%ED%94%84%EB%A6%B0%ED%8A%B8.png)
