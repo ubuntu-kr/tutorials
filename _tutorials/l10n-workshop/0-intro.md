@@ -13,3 +13,6 @@ order: 0
 ### 1) 개인 노트북
 
 *실습이 있기 때문에 반드시 각자 개인 노트북을 지참하셔야합니다.*
+
+### 문서 원본 저장소
+https://github.com/ubuntu-kr/ubuntu-korea-l10n-workshop
