@@ -11,7 +11,7 @@ order: 3
 
 1) 챕터01 에서 만든 LaunchPad ID를 이용하여 로그인합니다.
 
-![alt tag](https://github.com/minwook-shin/ubuntu-korea-l10n-workshop/blob/master/pictures/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.PNG)
+![alt tag](img/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.PNG)
 
 2) Personal Data Request에서 이름과 이메일 주소를 확인한뒤 yes, log me in 을 누릅니다.
 
