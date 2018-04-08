@@ -44,13 +44,13 @@ order: 2
 1. Is this correct? 라는 질문이 나오면 y키를 누릅니다.
 1. 이제 기본설정이 완료 되었습니다.
 
-![generate key](img/gen_key.PNG)
+![generate key](img/gen_key.png)
 
 1. 다음 이미지를 참고하여 입력합니다.
 2. Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? 가 나오면 제대로 입력했는지를 확인한 후 O를 누릅니다.
 3. 비밀번호를 입력하면 랜덤바이트를 모읍니다.
 
-![identify key](img/identify_key.PNG)
+![identify key](img/identify_key.png)
 
 1. 다음을 입력하여 키 ID를 확인합니다.
 
